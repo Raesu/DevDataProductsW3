@@ -1,0 +1,26 @@
+---
+title: "Dev Data Products Week 3 Project"
+author: "Ryan Summe"
+date: "2024-05-16"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(plotly);
+
+df <- storms
+
+```
+
+## Storm Dataset Visualization with Plotly
+```{r}
+
+plot <- df |> plot_ly(y=~fct_reorder(status, wind), x=~wind, color=~status, type='box') |>
+  layout(showlegend=FALSE)
+plot
+
+```
+
